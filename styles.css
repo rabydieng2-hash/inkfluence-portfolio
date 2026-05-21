@@ -53,11 +53,11 @@ a {
 .brand {
   display: inline-flex;
   align-items: center;
-  width: clamp(150px, 14vw, 210px);
-  height: 54px;
+  width: clamp(170px, 18vw, 260px);
+  height: 62px;
   overflow: hidden;
   border-radius: 6px;
-  background: #12061c;
+  background: #7c668a;
 }
 
 .brand img {
@@ -65,6 +65,7 @@ a {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  transform: scale(1.85);
 }
 
 .nav {
@@ -430,8 +431,8 @@ h3 {
   }
 
   .brand {
-    width: 210px;
-    height: 70px;
+    width: 230px;
+    height: 74px;
   }
 
   .nav {
