@@ -53,12 +53,18 @@ a {
 .brand {
   display: inline-flex;
   align-items: center;
-  width: clamp(132px, 15vw, 210px);
+  width: clamp(150px, 14vw, 210px);
+  height: 54px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #12061c;
 }
 
 .brand img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .nav {
@@ -141,6 +147,45 @@ h3 {
   margin-top: 32px;
 }
 
+.service-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+  max-width: 620px;
+}
+
+.service-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 800;
+  box-shadow: 0 14px 34px rgba(52, 18, 82, 0.08);
+}
+
+.service-pill:nth-child(2),
+.service-pill:nth-child(4) {
+  transform: translateY(10px);
+}
+
+.service-pill svg,
+.card-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -219,6 +264,13 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 8px;
   box-shadow: 0 18px 45px rgba(52, 18, 82, 0.06);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(143, 51, 255, 0.32);
+  box-shadow: 0 24px 60px rgba(52, 18, 82, 0.12);
 }
 
 .card-icon,
@@ -231,6 +283,18 @@ h3 {
   background: var(--lime);
   color: var(--ink);
   font-weight: 900;
+}
+
+.card:nth-child(2) .card-icon,
+.card:nth-child(5) .card-icon {
+  background: #ffe0f3;
+  color: #8f1cff;
+}
+
+.card:nth-child(3) .card-icon,
+.card:nth-child(6) .card-icon {
+  background: #efe2ff;
+  color: #5d19b5;
 }
 
 .card p,
@@ -360,6 +424,14 @@ h3 {
   .site-header {
     align-items: flex-start;
     flex-direction: column;
+    gap: 14px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  .brand {
+    width: 210px;
+    height: 70px;
   }
 
   .nav {
@@ -373,5 +445,28 @@ h3 {
 
   .button {
     width: 100%;
+  }
+
+  .hero {
+    padding-top: 36px;
+  }
+
+  .service-cloud {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .service-pill {
+    justify-content: center;
+    border-radius: 8px;
+    min-height: 74px;
+    padding: 12px;
+    text-align: center;
+  }
+
+  .service-pill:nth-child(2),
+  .service-pill:nth-child(4) {
+    transform: none;
   }
 }
